@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "projects": {
+    "1-angular-lazyloading": "apps/1-angular-lazyloading",
+    "2-angular-changedetection": "apps/2-angular-changedetection",
+    "3-angular-ngfor-trackby": "apps/3-angular-ngfor-trackby",
+    "4-angular-rxjs-subscriptions": "apps/4-angular-rxjs-subscriptions",
+    "5-angular-guards-resolvers": "apps/5-angular-guards-resolvers",
+    "6-angular-ngrx": "apps/6-angular-ngrx",
+    "7-angular-reactiveforms": "apps/7-angular-reactiveforms",
+    "8-cypress": "apps/8-cypress"
+  }
+}

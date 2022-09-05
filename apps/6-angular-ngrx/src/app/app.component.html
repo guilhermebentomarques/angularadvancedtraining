@@ -1,0 +1,4 @@
+<div *ngFor="let post of (posts$ | async)">
+  <h3>{{ post.title }}  <button (click)="deletePost(post.id)">Delete</button></h3>
+  <p>{{ post.body }}</p>
+</div>

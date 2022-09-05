@@ -1,0 +1,21 @@
+<h2>Reactive form</h2>
+
+<h3>Controls</h3>
+<button (click)="stars.disable()">Disable</button>
+<button (click)="stars.enable()">Enable</button>
+
+<h3>Rendering</h3>
+<app-stars [formControl]="stars"></app-stars>
+<div *ngIf="stars.dirty && stars.hasError('ratesAbove3Only')"><b>Rates above 3 only</b></div>
+
+<h3>Debug</h3>
+<pre>
+{{ { value: stars.value, status: stars.status } | json }}
+</pre>
+
+<h2>Template-driven form</h2>
+
+<form #form="ngForm">
+  <app-stars name="stars" ngModel appRateAbove3Only></app-stars>
+  <div>{{ { value: form.value, form: form.status } | json }}</div>
+</form>

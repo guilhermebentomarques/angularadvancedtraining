@@ -1,0 +1,10 @@
+<button (click)="addUser()">Add user</button>
+<ul>
+  <li *ngFor="let user of users; let index = index; trackBy: trackById">
+    {{ user.id }} {{ user.name }}
+    <button (click)="setRandomName(user)">Change name</button>
+    <button (click)="setRandomId(user)">Change id</button>
+    <button (click)="changeObjectReference(index)">Change object reference</button>
+    <button (click)="removeUser(user)">Remove</button>
+  </li>
+</ul>

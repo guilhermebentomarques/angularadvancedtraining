@@ -1,0 +1,93 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/3-angular-ngfor-trackby/src",
+  "prefix": "advanced-angular-course",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/3-angular-ngfor-trackby",
+        "index": "apps/3-angular-ngfor-trackby/src/index.html",
+        "main": "apps/3-angular-ngfor-trackby/src/main.ts",
+        "polyfills": "apps/3-angular-ngfor-trackby/src/polyfills.ts",
+        "tsConfig": "apps/3-angular-ngfor-trackby/tsconfig.app.json",
+        "assets": [
+          "apps/3-angular-ngfor-trackby/src/favicon.ico",
+          "apps/3-angular-ngfor-trackby/src/assets"
+        ],
+        "styles": ["apps/3-angular-ngfor-trackby/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/3-angular-ngfor-trackby/src/environments/environment.ts",
+              "with": "apps/3-angular-ngfor-trackby/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "3-angular-ngfor-trackby:build:production"
+        },
+        "development": {
+          "browserTarget": "3-angular-ngfor-trackby:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "3-angular-ngfor-trackby:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/3-angular-ngfor-trackby/src/**/*.ts",
+          "apps/3-angular-ngfor-trackby/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/3-angular-ngfor-trackby"],
+      "options": {
+        "jestConfig": "apps/3-angular-ngfor-trackby/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
